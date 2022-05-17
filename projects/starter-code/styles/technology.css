@@ -1,0 +1,220 @@
+@import "navigation.css";
+
+body{
+    min-height: 100vh;
+    background:none;
+    background:url('../assets/technology/background-technology-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+main{
+    color:white;
+    text-align: center;
+    margin-top: 4rem;
+    min-height: 100vh;
+}
+main > h3,.desktop-title{
+    text-transform: uppercase;
+    font-size:1.3rem;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'Barlow Condensed';
+    margin-bottom:2.5rem;
+}
+main h3 span{
+    color:rgba(255,255,255,0.5);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-right:1rem;
+}
+.technology-image{
+    width:100%;
+    min-height:250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.technology-container{
+    display:flex;
+    flex-direction: column-reverse;
+}
+.desktop-title{
+    display: none;
+}
+
+.technology-details{
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:2.5rem;
+    margin-bottom:2rem;
+}
+
+.number{
+    width:45px;
+    height:45px;
+    cursor: pointer;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:border-color 0.5s;
+}
+.number.selected{
+    background:white;
+    color:var(--dark-blue);
+}
+.number:hover{
+    border-color: white;
+}
+.number:not(:first-child){
+    margin-left:1.5rem;
+}
+.left-section{
+    padding:0 2rem;
+}
+.left-section h4{
+    font-family: 'Barlow Condensed';
+    font-weight: lighter;
+    color:var(--light-violet);
+    font-size:1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom:1rem;
+}
+.left-section h2{
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom:1.8rem;
+}
+.left-section p{
+    color:var(--light-violet);
+    line-height: 1.5rem;
+    max-width:400px;
+}
+@media screen and (min-width:500px){
+    body{
+        background:none;
+        background:url('../assets/technology/background-technology-tablet.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    main > h3{
+        text-align: left;
+        padding-left:2rem;
+        margin-bottom:3rem;
+    }
+    
+    .technology-image{
+        min-height: 350px;
+    }
+    .right-section{
+        margin-top:3rem;
+        margin-bottom:2.5rem;
+    }
+
+    .left-section h2{
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width:850px){
+    body{
+        background:none;
+        background:url('../assets/technology/background-technology-desktop.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    main > h3{
+        display:none;
+    }
+    main{
+        min-height: 550px;
+        
+    }
+  
+    .left-section{
+        position: relative;
+    }
+    .desktop-title{
+        display:block;
+        position: absolute;
+        left:-102px;
+        top:-180px;
+    }
+    .technology-container{
+        flex-direction: row;
+        height:650px;
+        justify-content: space-between;
+    }
+   
+   
+    .technology-image{
+        width:550px;
+        min-height:auto;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 100%;
+    }
+    
+    .technology-details{
+        flex-direction: row-reverse;
+        width:870px;
+    }
+    .right-section{
+        flex-direction: column;
+        margin-right:2.5rem;
+        padding-left:2rem;
+    }
+    .number{
+        width:70px;
+        height:70px;
+    }
+    .number:not(:first-child){
+        margin:0;
+        margin-top:1.5rem;
+    }
+    .left-section{
+        text-align: left;
+    }
+    .left-section p{
+        max-width:500px;
+        font-size:1.3rem;
+        line-height: 1.7rem;
+    }
+    .left-section h2{
+        font-size: 4rem;
+    }
+    .number{
+        font-size:1.5rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width:1210px){
+    .desktop-title{
+        top:-135px;
+    }
+}
+@media screen and (max-width:1100px){
+    .desktop-title{
+        top:-125px;
+    }
+}
+@media screen and (max-width:968px){
+    .desktop-title{
+        top:-115px;
+    }
+}

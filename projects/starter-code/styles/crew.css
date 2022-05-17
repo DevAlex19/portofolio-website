@@ -1,0 +1,188 @@
+@import 'navigation.css';
+
+body{
+    background:none;
+    background:url('../assets/crew/background-crew-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+main{
+    color:white;
+    padding:0 2rem 0;
+    text-align: center;
+}
+main h3{
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed';
+    font-size:1.3rem;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-top:4rem;
+}
+
+main h3 span{
+    color:rgba(255,255,255,0.5);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-right:1rem;
+}
+.crew-container{
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top:3rem;
+    border-bottom:2px solid rgba(255,255,255,0.1);
+    margin-bottom:2.4rem;
+}
+.img-container > img{
+    width:200px;
+    display: block;
+}
+
+.crew-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.crew-details h2{
+    order:2;
+    font-size:1.5rem;
+    color:rgba(255,255,255,0.5);
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-bottom:1rem;
+}
+.crew-details h1{
+    order:3;
+    font-size:2.1rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-bottom:2rem;
+}
+.crew-details p{
+    order:4;
+    color:var(--light-violet);
+    font-family: 'Barlow Condensed';
+    font-weight: lighter;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+.dots{
+    order:1;
+    display: flex;
+    justify-content: center;
+    margin-bottom:2.4rem;
+}
+.dot{
+    width:14px;
+    height:14px;
+    background:rgba(255,255,255,0.2);
+    border-radius:50%;
+    cursor: pointer;
+}
+.dot.active{
+    background:white;
+}
+.dot:not(:first-child){
+    margin-left:1rem;
+}
+.desktop-title{
+    display:none;
+}
+@media screen and (min-width:500px){
+    body{
+        background:none;
+        background:url('../assets/crew/background-crew-tablet.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+   
+   main h3{
+       text-align: left;
+   }
+   .crew-container{
+       flex-direction: column;
+   }
+   .crew-details{
+       max-width:480px;
+   }
+   .crew-details h2{
+       order:1;
+       margin-top:3rem;
+   }
+   .crew-details h1{
+       order:2;
+    }
+   .crew-details p{
+        order:3;
+        margin-bottom:3rem;
+    }
+    .dots{
+        order:4;
+        margin-bottom:4rem;
+    }
+    .img-container > img{
+        width:350px;
+        display: block;
+    }
+    .img-container{
+        border:none;
+        margin:0;
+    }
+}
+
+@media screen and (min-width:850px){
+    body{
+        background:none;
+        background:url('../assets/crew/background-crew-desktop.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    .crew-container{
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-evenly;
+        height:100%;
+    }
+    main{
+        margin-top:6rem;
+        height:722px;
+    }
+    main > h3{
+        display:none;
+    }
+    .desktop-title{
+        display:block;
+        transform:translateY(-130px);
+    }
+   .img-container{
+       height:100%;
+       width:600px;
+       align-self: flex-end;
+   }
+   .img-container img{
+    width:100%;
+   }
+   .crew-details{
+       max-width:600px;
+   }
+   .crew-details p{
+       max-width:380px;
+   }
+   .crew-details h1{
+        font-size: 3rem;
+ }
+ .dots{
+     justify-content: flex-start;
+     margin-top:5rem;
+ }
+}

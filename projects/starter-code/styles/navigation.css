@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-blue:#0b0d17;
+    --light-violet:#d0d6f9;
+}
+
+html.active{
+    overflow-y:hidden;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    font-family: 'Bellefair',arial;
+    background:url('../assets/home/background-home-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    min-height:100vh;
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    padding:2rem 2rem 0;
+}
+
+nav ul{
+    position:absolute;
+    list-style-type:none;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(80px);
+    margin:0;
+    top:0%;
+    right:0%;
+    height:0vh;
+    min-width:300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: hidden;
+    transition:height 0.5s;
+    z-index: 1000;
+}
+nav ul.active{
+    height:100vh;
+    
+}
+.hamburger-menu{
+    cursor:pointer;
+    z-index:1001;
+}
+.line{
+    width:30px;
+    height:4px;
+    margin-bottom:0.5rem;
+    background:var(--light-violet);
+    transition:transform 0.5s,opacity 0.2s;
+}
+.line:nth-child(1).active{
+    transform:rotate(-45deg) translate(-10px,10px);
+}
+.line:nth-child(2).active{
+    opacity: 0;;
+}
+.line:nth-child(3).active{
+    transform:rotate(45deg) translate(-6px,-8px);
+}
+
+nav ul li{
+    margin-bottom:2rem;
+    width:100%;
+    padding:0.5rem 0 0.5rem 2rem;
+    transition:border 0.1s;
+}
+nav ul li:first-child{
+    margin-top:8rem;
+}
+nav ul li:hover{
+    border-right: 5px solid white;
+}
+nav ul li span{
+    font-weight: bold;
+}
+nav ul li a{
+    text-decoration: none;
+    display:block;
+    color:white;
+    font-family: 'Barlow Condensed';
+    letter-spacing: 2px;
+    cursor:pointer;
+    font-weight: lighter;
+    font-size:1.3rem;
+}
+
+@media screen and (min-width:500px){
+    body{
+        background:none;
+        background:url('../assets/home/background-home-tablet.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }   
+    .hamburger-menu{
+        display:none;
+    }
+    nav{
+        padding:0;
+        padding-left:2rem;
+    }
+
+    nav ul{
+        position:relative;
+        height:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width:100%;
+        width:500px;
+        text-align: center;
+    }
+    nav ul li,nav ul li:first-child{
+        margin:0;
+        position:relative;
+        padding:0;
+        transition:none;
+        padding:2rem 0;
+        width:auto;
+    }
+
+    nav ul li:hover{
+        border:none;
+    }
+    nav ul li a span{
+        display:none;
+    }
+    nav ul li::before{
+        position:absolute;
+        content:'';
+        width:0%;
+        height:3px;
+        bottom:0;
+        left:0;
+        transition:width 0.2s;
+    }
+
+    nav ul li:hover::before{
+        width:100%;
+        background:var(--light-violet);
+    }
+    
+    nav ul li.selected::before{
+        background:white;
+        width:100%;
+    }
+    nav ul li a{
+        font-size:1rem;
+        display:inline;
+    }
+
+}
+
+@media screen and (min-width:850px){
+    body{
+        background:none;
+        background:url('../assets/home/background-home-desktop.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    nav{
+        padding:0;
+        padding:3rem 0 0 3rem;
+    }
+    nav ul{
+        width:800px;
+        position:relative;
+        justify-content:center;
+        overflow: visible;
+        
+    }
+    nav ul::before{
+        position:absolute;
+        background:rgba(255,255,255,0.5);
+        width:calc(100vw - 910px);
+        height:1px;
+        content:'';
+        top:50%;
+        right:95%;
+        display:flex;
+        align-items: center;
+        transform:translateY(-50%);
+        transform-origin: right;
+    }
+    nav ul li{
+        margin-left: 3.5rem;
+    }
+    nav ul li a span{
+        display:block;
+        margin-right:0.5rem;
+    }
+    nav ul li a{
+        display:flex;
+        font-size:1.1rem;
+    }
+    nav ul li,nav ul li:first-child{
+        padding:2.5rem 0;
+    }
+}
+
+@media screen and (max-width:1020px){
+    nav ul::before{
+        display:none;
+    }
+}

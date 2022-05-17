@@ -1,0 +1,205 @@
+@import 'navigation.css';
+
+body{
+    min-height:100vh;
+    background:none;
+    background:url('../assets/destination/background-destination-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+main{
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0 2rem 5rem;
+    text-align: center;
+}
+.destination-container h3{
+    text-transform: uppercase;
+    margin:4rem 0;
+    font-size:1.3rem;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'Barlow Condensed';
+}
+.destination-container h3 span{
+    color:rgba(255,255,255,0.5);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-right:1rem;
+}
+
+.destination-container img{
+    width:60%;
+    animation:rotate 15s linear infinite;
+}
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.planets{
+    margin-top:3rem;
+}
+
+.planets-menu a{
+    text-decoration: none;
+    color:var(--light-violet);
+    font-family: 'Barlow Condensed';
+    cursor:pointer;
+    font-size:1.2rem;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    padding:0.8rem 0;
+    position:relative;
+    
+}
+
+.planets-menu a::before{
+    content:'';
+    position:absolute;
+    background:rgba(255,255,255,0.5);
+    width:0%;
+    height:4px;
+    bottom:0;
+    transition:width 0.5s;
+}
+
+.planets-menu a.selected::before{
+    background:white;
+    width:100%;
+}
+.planets-menu a:hover::before{
+    width:100%;
+}
+.planets-menu a:not(:first-child){
+    margin-left:1.2rem;
+}
+
+.planets h1{
+    margin-top:2.5rem;
+    font-weight: lighter;
+    font-size:4rem;
+    text-transform: uppercase;
+}
+.planets > p{
+    color:var(--light-violet);
+    margin-top:1rem;
+    font-size: 1.2rem;
+    font-family: 'Barlow Condensed';
+    font-weight: lighter;
+    letter-spacing: 1px;
+    line-height: 2rem;
+}
+
+.details{
+    border-top: 1px solid rgba(255,255,255,0.5);
+    margin-top:2.5rem;
+}
+
+.distance h4,.travel h4{
+    color:var(--light-violet);
+    font-family: 'Barlow Condensed';
+    font-weight: lighter;
+    margin-top:2rem;
+    font-size:1.1rem;
+    letter-spacing: 3px;
+}
+
+.distance p,.travel p{
+    font-size:2rem;
+    margin-top:1rem;
+}
+
+@media screen and (min-width:500px){
+    .destination-container{
+        width:100%;
+    }
+    .destination-container h3{
+       text-align: left;
+       font-size:1.3rem;
+    }
+    body{
+        background:none;
+        background:url('../assets/destination/background-destination-tablet.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    .planets-menu a{
+        font-size: 1.2rem;
+    }
+    .destination-container img{
+        width:300px;
+    }
+    .details{
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .planets{
+        max-width:700px;
+    }
+    .planets > p{
+        font-size:1.1rem;
+    }
+    .distance h4,.travel h4{
+        font-size:0.8rem;
+    }
+    .distance p,.travel p{
+        font-size:1.5rem;
+    }
+}
+
+@media screen and (min-width:850px){
+    body{
+        background:none;
+        background:url('../assets/destination/background-destination-desktop.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+   .destination-container{
+    width:450px;
+   }
+   .destination-container img{
+    width:450px;
+}
+   .destination-container, .destination-container h3{
+       text-align: left;
+       margin-bottom:6rem;
+       letter-spacing: 4px;
+       font-size:1.4rem;
+   }
+   main{
+       flex-direction: row;
+       justify-content: space-evenly;
+       align-items: center;
+       text-align: left;
+   }
+   .planets h1{
+       font-size: 5.8rem;
+   }
+   .planets > p{
+    font-size:1.2rem;
+}
+    .details{
+        justify-content: flex-start;
+    }
+    .travel{
+        margin-left:4rem;
+    }
+    .planets{
+        width:450px;
+        margin-left:2rem;
+        height:500px;
+    }
+    .distance p,.travel p{
+        font-size:1.8rem;
+    }
+}
